@@ -1,7 +1,9 @@
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        ana = collections.defaultdict(list)
+        # 새로운 객체에 정렬한 단어가 맞는 것들을 모으기
+        anagram = collections.defaultdict(list)
         
         for word in strs:
-            ana[''.join(sorted(word))].append(word)
-        return (list(ana.values()))
+            anagram[''.join(sorted(word))].append(word)
+        
+        return anagram.values()
